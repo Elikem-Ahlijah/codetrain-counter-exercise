@@ -1,25 +1,50 @@
 import logo from './logo.svg';
 import './App.css';
+import {Component, useState} from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+ function App() {
+  const [state, setState] = useState({age:20})
+  const handleClick = () => {
+    // console.log('button clicked')
+    let newAge = state.age + 1;
+    setState({age:newAge});
+  }
+
+   return (
+     <div>
+       <h1>Age is {state.age}</h1>
+
+       <button onClick={handleClick}>Click me!!!</button>
+     </div>
+   );
+ }
+
+
+// class App extends Component{
+//   constructor(){
+//     super();
+//     this.state = {age: 20};
+//   }
+//   handleClick = ()=>{
+//     // console.log('button clicked')
+//     let newAge = this.state.age + 1;
+//     this.setState({age:newAge});
+//   }
+//   render(){
+
+//     return(
+//       <div>
+//         <h1>Age is {this.state.age}</h1>
+//         <button onClick={this.handleClick}>Click me!!!</button>
+//       </div>
+
+//     );
+
+//   }
+
+  
+  
+
+// }
 
 export default App;
